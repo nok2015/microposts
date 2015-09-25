@@ -1,4 +1,13 @@
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
+<div class="profilepage center">
+  <h1>
+    <%= gravatar_for @user %>
+    <%= @user.name %>
+  </h1>
+  <div class="panel panel-default">
+    <span class="label label-info">自己紹介文</span><br>
+    <%= @user.profile %><br>
+  <br>
+    <span class="label label-info">地域</span><br>
+    <%= @user.place %><br>
+  </div>
+</div>
