@@ -1,13 +1,23 @@
-<div class="profilepage center">
-  <h1>
-    <%= gravatar_for @user %>
-    <%= @user.name %>
-  </h1>
-  <div class="panel panel-default">
-    <span class="label label-info">自己紹介文</span><br>
-    <%= @user.profile %><br>
-  <br>
-    <span class="label label-info">地域</span><br>
-    <%= @user.place %><br>
+<div class="row">
+  <aside class="col-md-4 panel panel-default">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+      <span class="label label-info">自己紹介文</span><br>
+      <%= @user.profile %><br>
+      <br>
+      <span class="label label-info">地域</span><br>
+      <%= @user.place %><br>
+    </section>
+  </aside>  
+  <div class="col-md-8">
+    <% if @user.microposts.any? %>
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+    <% end %>
   </div>
 </div>
