@@ -10,6 +10,10 @@
       <br>
       <span class="label label-info">地域</span><br>
       <%= @user.place %><br>
+      <br>
+      <span><%= link_to "フォローの一覧", followings_user_path  %></span>
+      <br>
+      <span><%= link_to "フォロワーの一覧", followers_user_path  %></span>
     </section>
   </aside>  
   <div class="col-md-8">
