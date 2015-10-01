@@ -19,6 +19,14 @@ class MicropostsController < ApplicationController
     redirect_to request.referrer || root_url
   end
   
+  def retweet
+    origin_micropost = Micropost.find(params[:id])
+    origin_micropost.retweets.create(content: "【RT】" + origin_micropost.content,
+                                     user:current_user, originpost_id: origin_micropost.id)
+    flash[:success] = "リツイート完了！"
+    redirect_to root_url
+  end
+  
   private
   def micropost_params
     params.require(:micropost).permit(:content)

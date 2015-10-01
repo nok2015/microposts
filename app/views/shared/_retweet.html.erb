@@ -1,0 +1,4 @@
+<% if micropost.originpost_id != blank %>
+  origin_user = User.find(params[:originpost_id])
+  puts origin_user.name
+<% end %>
