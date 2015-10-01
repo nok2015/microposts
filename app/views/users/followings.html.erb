@@ -1,3 +1,7 @@
+<% if @following_users.blank? %>
+<%= "フォローがいません" %>
+<% else %>
 <% @following_users.each do |user| %>
 <p><%= user.name %></p>
+<% end %>
 <% end %>
